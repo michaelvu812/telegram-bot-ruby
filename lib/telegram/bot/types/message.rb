@@ -4,6 +4,7 @@ module Telegram
       class Message < Base
         attribute :message_id, Integer
         attribute :from, User
+        attribute :sender_chat, Chat
         attribute :date, Integer
         attribute :chat, Chat
         attribute :forward_from, User
@@ -13,6 +14,7 @@ module Telegram
         attribute :forward_sender_name, String
         attribute :forward_date, Integer
         attribute :reply_to_message, Message
+        attribute :via_bot, User
         attribute :edit_date, Integer
         attribute :media_group_id, String
         attribute :author_signature, String
@@ -30,6 +32,7 @@ module Telegram
         attribute :video_note, VideoNote
         attribute :caption, String
         attribute :contact, Contact
+        attribute :dice, Dice
         attribute :location, Location
         attribute :venue, Venue
         attribute :poll, Poll
@@ -48,6 +51,7 @@ module Telegram
         attribute :successful_payment, SuccessfulPayment
         attribute :connected_website, String
         attribute :passport_data, PassportData
+        attribute :proximity_alert_triggered, ProximityAlertTriggered
         attribute :reply_markup, InlineKeyboardMarkup
 
         alias to_s text
